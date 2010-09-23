@@ -7,13 +7,13 @@ namespace Spextensions.RhinoMocks
     {
         public static IMethodOptions<T> Signal<T>(this IMethodOptions<T> methodOptions, string signalName, SignalState signals)
         {
-            signals.Called = true;
+            signals.Signal = signalName;
             return methodOptions;
         }
 
         public static IMethodOptions<T> AssertSignal<T>(this IMethodOptions<T> methodOptions, string signalName, SignalState signals)
         {
-            if (!signals.Called)
+            if (signals.Signal != signalName)
                 throw new AssertionException("");
 
             return methodOptions;

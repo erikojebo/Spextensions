@@ -1,5 +1,6 @@
 using NUnit.Framework;
 using Rhino.Mocks;
+using Spextensions.NUnit;
 
 namespace Spextensions.RhinoMocks
 {
@@ -18,7 +19,7 @@ namespace Spextensions.RhinoMocks
             _signals = new SignalState();
         }
 
-        [Test]
+        [Fact]
         public void No_exception_when_signal_is_given_before_matched_expectation()
         {
             _mock1.Expect(x => x.Method1())
@@ -31,13 +32,27 @@ namespace Spextensions.RhinoMocks
             _mock2.Method2();
         }
 
-        [Test]
+        [Fact]
         [ExpectedException(typeof(AssertionException))]
         public void AssertionException_when_no_signal_is_given_before_matched_expectation()
         {
             _mock2.Expect(x => x.Method2())
                 .AssertSignal("given signal", _signals);
 
+            _mock2.Method2();
+        }
+
+        [Fact]
+        [ExpectedException(typeof(AssertionException))]
+        public void AssertionException_when_only_some_other_signal_is_given_before_matched_expectation()
+        {
+            _mock1.Expect(x => x.Method1())
+                .Signal("other signal", _signals);
+
+            _mock2.Expect(x => x.Method2())
+                .AssertSignal("expected signal", _signals);
+
+            _mock1.Method1();
             _mock2.Method2();
         }
 
