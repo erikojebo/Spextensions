@@ -51,6 +51,7 @@
     <Compile Include="RhinoMocks\SignalingExtensions.cs" />
     <Compile Include="RhinoMocks\SignalingSpecs.cs" />
     <Compile Include="RhinoMocks\SignalState.cs" />
+    <Compile Include="RhinoMocks\SignalStateSpecs.cs" />
   </ItemGroup>
   <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
