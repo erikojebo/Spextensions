@@ -1,7 +1,7 @@
 Spextensions is a small library of extensions and utilities for RhinoMocks
 and NUnit.
 
-Some of the features included in the library is:
+Some of the features included in the library are:
 
 - jMock inspired "states" for RhinoMocks
 - Fluid RSpec style assertion syntax for NUnit
