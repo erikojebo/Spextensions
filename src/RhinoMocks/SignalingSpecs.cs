@@ -1,6 +1,7 @@
 using NUnit.Framework;
 using Rhino.Mocks;
 using Spextensions.NUnit;
+using Spextensions.RhinoMocks.Dummies;
 
 namespace Spextensions.RhinoMocks
 {
@@ -202,18 +203,6 @@ namespace Spextensions.RhinoMocks
 
             _mock1.Property = "wrong value";
             _mock2.Method2();
-        }
-
-        public interface ISomeInterface
-        {
-            string Property { get; set; }
-            void Method1();
-            void Method1(string argument);
-        }
-
-        public interface ISomeOtherInterface
-        {
-            void Method2();
         }
     }
 }

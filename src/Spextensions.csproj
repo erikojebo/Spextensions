@@ -50,6 +50,9 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="RhinoMocks\AssertionExtensions.cs" />
     <Compile Include="RhinoMocks\AssertionSpecs.cs" />
+    <Compile Include="RhinoMocks\Dummies\ISomeInterface.cs" />
+    <Compile Include="RhinoMocks\Dummies\ISomeOtherInterface.cs" />
+    <Compile Include="RhinoMocks\ReturnQueueSpecs.cs" />
     <Compile Include="RhinoMocks\SignalingExtensions.cs" />
     <Compile Include="RhinoMocks\SignalingSpecs.cs" />
     <Compile Include="RhinoMocks\Signal.cs" />
