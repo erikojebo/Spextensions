@@ -4,14 +4,14 @@ namespace Spextensions.RhinoMocks
 {
     public static class SignalingExtensions
     {
-        public static IMethodOptions<T> Signal<T>(this IMethodOptions<T> methodOptions, string signalName, SignalState signals)
+        public static IMethodOptions<T> Signal<T>(this IMethodOptions<T> methodOptions, Signal signal)
         {
-            return methodOptions.WhenCalled(mi => signals.Signal(signalName));
+            return methodOptions.WhenCalled(mi => signal.Send());
         }
 
-        public static IMethodOptions<T> AssertSignal<T>(this IMethodOptions<T> methodOptions, string signalName, SignalState signals)
+        public static IMethodOptions<T> AssertSignal<T>(this IMethodOptions<T> methodOptions, Signal signal)
         {
-            return methodOptions.WhenCalled(mi => signals.AssertSignal(signalName));
+            return methodOptions.WhenCalled(mi => signal.Assert());
         }
     }
 }
