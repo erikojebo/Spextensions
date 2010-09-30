@@ -4,6 +4,7 @@ using System.Linq;
 using NUnit.Framework;
 using Rhino.Mocks;
 using Spextensions.NUnit;
+using Spextensions.RhinoMocks.Dummies;
 using Is = Rhino.Mocks.Constraints.Is;
 
 namespace Spextensions.RhinoMocks
@@ -59,11 +60,6 @@ namespace Spextensions.RhinoMocks
                 .AssertThat(() => false, "expected message");
 
             _mock.Method();
-        }
-
-        public interface ISomeInterface
-        {
-            void Method();
         }
     }
 }

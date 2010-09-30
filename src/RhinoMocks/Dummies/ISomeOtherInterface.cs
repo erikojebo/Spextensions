@@ -2,6 +2,6 @@
 {
     public interface ISomeOtherInterface
     {
-        void Method2();
+        void OtherMethod();
     }
 }

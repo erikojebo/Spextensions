@@ -3,7 +3,10 @@
     public interface ISomeInterface
     {
         string Property { get; set; }
-        void Method1();
-        void Method1(string argument);
+        void Method();
+        void MethodWithParameter(string argument);
+        int Function();
+        int FunctionWithOneParameter(int a);
+        int FunctionWithTwoParameters(int a, bool b);
     }
 }
