@@ -52,10 +52,13 @@
     <Compile Include="RhinoMocks\AssertionSpecs.cs" />
     <Compile Include="RhinoMocks\Dummies\ISomeInterface.cs" />
     <Compile Include="RhinoMocks\Dummies\ISomeOtherInterface.cs" />
-    <Compile Include="RhinoMocks\EmptyReturnSequenceSpecs.cs" />
-    <Compile Include="RhinoMocks\ReturnSequenceWithOneValueSpecs.cs" />
+    <Compile Include="RhinoMocks\IValueProvider.cs" />
+    <Compile Include="RhinoMocks\ReturnSequenceSpecs.cs" />
+    <Compile Include="RhinoMocks\Exceptions\OutOfReturnValuesException.cs" />
     <Compile Include="RhinoMocks\ReturnSequenceExtensions.cs" />
-    <Compile Include="RhinoMocks\ReturnValueSequence.cs" />
+    <Compile Include="RhinoMocks\Sequence.cs" />
+    <Compile Include="RhinoMocks\SequenceSpecs_Empty.cs" />
+    <Compile Include="RhinoMocks\SequenceSpecs_OneValue.cs" />
     <Compile Include="RhinoMocks\SignalingExtensions.cs" />
     <Compile Include="RhinoMocks\SignalingSpecs.cs" />
     <Compile Include="RhinoMocks\Signal.cs" />

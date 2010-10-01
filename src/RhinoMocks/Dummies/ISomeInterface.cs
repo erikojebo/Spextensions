@@ -8,5 +8,6 @@
         int Function();
         int FunctionWithOneParameter(int a);
         int FunctionWithTwoParameters(int a, bool b);
+        int FunctionWithThreeParameters(int a, bool b, string s);
     }
 }
