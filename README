@@ -3,7 +3,12 @@ and NUnit.
 
 Some of the features included in the library are:
 
-- jMock inspired "states" for RhinoMocks
+RhinoMocks: 
+- jMock inspired "states"
+- Return value sequences for expectations and stubs
+
+NUnit:
 - Fluid RSpec style assertion syntax for NUnit
+- Semantic aliases for attributes, such as Test => Fact
 
 The code is licensed under the MIT license, as described in the LICENSE file.
