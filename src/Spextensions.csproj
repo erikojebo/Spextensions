@@ -48,7 +48,10 @@
   <ItemGroup>
     <Compile Include="Dynamics\Builders\DynamicBuilder.cs" />
     <Compile Include="Dynamics\Builders\DynamicBuilderSpecs.cs" />
-    <Compile Include="Dynamics\Builders\MissingPropertyException.cs" />
+    <Compile Include="Dynamics\Builders\Exceptions\MissingCollectionPropertyException.cs" />
+    <Compile Include="Dynamics\Builders\Exceptions\MissingPropertyException.cs" />
+    <Compile Include="Dynamics\Builders\PropertyValueCollector.cs" />
+    <Compile Include="Dynamics\Builders\PropertyValueCollectorSpecs.cs" />
     <Compile Include="Dynamics\Infrastructure\FailedInvocationResult.cs" />
     <Compile Include="Dynamics\Infrastructure\HookableDynamicObject.cs" />
     <Compile Include="Dynamics\Infrastructure\InvocationResult.cs" />

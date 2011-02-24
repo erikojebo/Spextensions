@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace Spextensions.Dynamics.Builders
+namespace Spextensions.Dynamics.Builders.Exceptions
 {
     public class MissingPropertyException : Exception
     {
