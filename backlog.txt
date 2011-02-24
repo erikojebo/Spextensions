@@ -1,8 +1,9 @@
 * DynamicBuilder base class
-** Support for settings properties
-** Support for adding children
-*** ICollection<T>
-*** IEnumerable<T> / AddEntityName
+** DONE Support for settings properties
+** TODO Support for adding children
+*** DONE ICollection<T>
+*** TODO ICollection<T> with PropertyValueCollector
+*** TODO IEnumerable<T> / AddEntityName
     BlogPost
       .Title("foo")
       .Body("bar")
@@ -12,8 +13,7 @@
     Property i testbasklass som heter With o returnerar ett dynamiskt objekt som bara samlar på sig
     key value av property namn och värde.
     Buildern kan sedan loopa igenom dictionaryn o sätta lämpliga värden.
-** Properties called something with Date or Time set to a string will be tryparsed and set
-*** If it could be parsed as date, set as date, otherwise set as original value
+** TODO Properties of type DateTime set to a string will be tryparsed and set
 * Dynamic fluent assertion
 ** Instance thru constructor
 ** Assert property values by daisy chaining
