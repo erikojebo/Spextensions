@@ -1,3 +1,4 @@
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using NUnit.Framework;
@@ -73,21 +74,86 @@ namespace Spextensions.Dynamics.Builders
             Assert.AreEqual(1.23, actualChild.SomeDouble);
         }
 
+        [Test]
+        public void Can_set_date_property_to_date_value()
+        {
+            var actual = _builder
+                .SomeDate(new DateTime(2010, 1, 2, 3, 4, 5))
+                .Build();
+
+            Assert.AreEqual(new DateTime(2010, 1, 2, 3, 4, 5), actual.SomeDate);
+        }
+
+        [Test]
+        public void Can_set_date_property_to_string_representation_of_date()
+        {
+            var actual = _builder
+                .SomeDate("2010-01-02 03:04:05")
+                .Build();
+
+            Assert.AreEqual(new DateTime(2010, 1, 2, 3, 4, 5), actual.SomeDate);
+        }
+
+        [Test]
+        public void Uses_add_method_when_adding_child_instance_to_enumerable_collection()
+        {
+            var expectedChild = new SubclassObject();
+
+            SomeClass actual = _builder
+                .EnumerableObject(expectedChild)
+                .Build();
+
+            var actualChild = actual.EnumerableObjects.FirstOrDefault();
+
+            Assert.AreEqual(1, actual.EnumerableObjects.Count());
+            Assert.AreSame(expectedChild, actualChild);
+        }
+        
+        [Test]
+        public void Adds_created_and_initialized_child_when_adding_with_property_collector_to_enumerable_collection()
+        {
+            dynamic collector = new PropertyValueCollector();
+
+            SomeClass actual = _builder
+                .EnumerableObject(collector.SomeString("string").SomeDouble(1.23))
+                .Build();
+
+            var actualChild = actual.EnumerableObjects.FirstOrDefault();
+
+            Assert.AreEqual(1, actual.EnumerableObjects.Count());
+            Assert.AreEqual("string", actualChild.SomeString);
+            Assert.AreEqual(1.23, actualChild.SomeDouble);
+        }
+
         private class SomeClass
         {
+            private IList<SubclassObject> _enumerableObjects;
+
             public SomeClass()
             {
                 SubclassObjects = new List<SubclassObject>();
+                _enumerableObjects = new List<SubclassObject>();
             }
 
             public int SomeInt { get; set; }
-            public IList<SubclassObject> SubclassObjects { get; set; }
+            public DateTime SomeDate { get; set; }
+            public IList<SubclassObject> SubclassObjects { get; private set; }
+
+            public IEnumerable<SubclassObject> EnumerableObjects
+            {
+                get { return _enumerableObjects; }
+            }
+
+            public void AddEnumerableObject(SubclassObject o)
+            {
+                _enumerableObjects.Add(o);
+            }
         }
 
         private class SubclassObject
         {
             public string SomeString { get; set; }
-            public string SomeDouble { get; set; }
+            public double SomeDouble { get; set; }
         }
     }
 }

@@ -30,5 +30,25 @@ namespace Spextensions.Dynamics.Builders
 
             Assert.AreEqual(2, _collector.PropertyValues["Property"]);
         }
+
+        [Test]
+        public void Initialize_sets_collected_properties_on_given_object()
+        {
+            var instance = new SomeClass();
+
+            _collector.Property1("string")
+                .Property2(1.23);
+
+            _collector.Initialize(instance);
+
+            Assert.AreEqual("string", instance.Property1);
+            Assert.AreEqual(1.23, instance.Property2);
+        }
+
+        private class SomeClass
+        {
+            public string Property1 { get; set; }
+            public double Property2 { get; set; }
+        }
     }
 }

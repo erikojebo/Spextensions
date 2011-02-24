@@ -1,4 +1,5 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 using Spextensions.Dynamics.Infrastructure;
 
 namespace Spextensions.Dynamics.Builders
@@ -11,6 +12,17 @@ namespace Spextensions.Dynamics.Builders
         {
             PropertyValues[methodName] = arguments[0];
             return new SuccessfulInvocationResult(this);
+        }
+
+        public void Initialize(object childInstance)
+        {
+            var type = childInstance.GetType();
+
+            foreach (var propertyValue in PropertyValues)
+            {
+                var property = type.GetProperty(propertyValue.Key);
+                property.SetValue(childInstance, propertyValue.Value, null);
+            }
         }
     }
 }

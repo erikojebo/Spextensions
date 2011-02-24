@@ -19,7 +19,7 @@ namespace Spextensions.Dynamics.Builders
 
             if (MatchesCollectionProperty(methodName))
             {
-                return AddChild(value);
+                return AddChild(methodName, value);
             }
 
             return SetOrdinaryProperty(methodName, value);
@@ -33,24 +33,38 @@ namespace Spextensions.Dynamics.Builders
             return _collectionProperty != null;
         }
 
-        private InvocationResult AddChild(object value)
+        private InvocationResult AddChild(string methodName, object value)
         {
             var propertyType = _collectionProperty.PropertyType;
 
-            var collectionInterfaces = propertyType.GetInterfaces()
-                .Where(x => x.IsGenericType)
+            var genericInterfaces = propertyType.GetInterfaces()
+                .Where(x => x.IsGenericType);
+
+            var collectionInterfaces = genericInterfaces
                 .Where(x => x.GetGenericTypeDefinition() == typeof(ICollection<>));
 
-            var childTypes = collectionInterfaces.Select(x => x.GetGenericArguments()[0]);
-
-            if (childTypes.Any())
+            if (collectionInterfaces.Any())
             {
+                var childTypes = collectionInterfaces.Select(x => x.GetGenericArguments()[0]);
+
                 var childType = childTypes.First();
                 object childInstance = GetChildInstance(childType, value);
 
                 var addMethod = collectionInterfaces.First().GetMethod("Add");
                 var collection = _collectionProperty.GetValue(Entity, null);
                 addMethod.Invoke(collection, new[] { childInstance });
+            }
+            else if (propertyType.GetGenericTypeDefinition() == typeof(IEnumerable<>))
+            {
+                var childType = propertyType.GetGenericArguments()[0];
+                object childInstance = GetChildInstance(childType, value);
+
+                // Collection: "Objects"
+                // Builder method called: .Object(...)
+                // Add method: AddObject(...)
+                var addMethod = typeof(T).GetMethod("Add" + methodName);
+
+                addMethod.Invoke(Entity, new[] { childInstance });
             }
 
             return new SuccessfulInvocationResult(this);
@@ -66,7 +80,12 @@ namespace Spextensions.Dynamics.Builders
             }
 
             // Otherwise, create a new instance of the child type
-            return Activator.CreateInstance(childType);
+            var childInstance = Activator.CreateInstance(childType);
+
+            if (value is PropertyValueCollector)
+                ((PropertyValueCollector)value).Initialize(childInstance);
+
+            return childInstance;
         }
 
         private InvocationResult SetOrdinaryProperty(string propertyName, object value)
@@ -78,6 +97,11 @@ namespace Spextensions.Dynamics.Builders
             if (!propertyExists)
             {
                 throw new MissingPropertyException(propertyName, value);
+            }
+
+            if (property.PropertyType == typeof(DateTime) && value is string)
+            {
+                value = DateTime.Parse((string)value);
             }
 
             property.SetValue(Entity, value, null);
