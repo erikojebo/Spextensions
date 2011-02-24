@@ -57,7 +57,6 @@ namespace Spextensions.Dynamics.Builders
             Assert.AreSame(expectedChild, actualChild);
         }
 
-        [Ignore]
         [Test]
         public void Adds_child_with_properties_set_on_added_instance_when_adding_plural_s_results_in_collection_name()
         {
