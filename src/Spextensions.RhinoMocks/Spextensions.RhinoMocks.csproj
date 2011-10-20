@@ -40,7 +40,11 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Assertions\AssertionExtensions.cs" />
+    <Compile Include="Debugging\ConsoleInvocationInfoRenderer.cs" />
     <Compile Include="Debugging\DebugOutputExtensions.cs" />
+    <Compile Include="Debugging\IInvocationInfoRenderer.cs" />
+    <Compile Include="Debugging\InMemoryInvocationInfoRenderer.cs" />
+    <Compile Include="Debugging\InvocationInfoRenderer.cs" />
     <Compile Include="Exceptions\AssertionException.cs" />
     <Compile Include="Exceptions\OutOfReturnValuesException.cs" />
     <Compile Include="Exceptions\SignalAssertionException.cs" />
