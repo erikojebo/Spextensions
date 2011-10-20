@@ -39,7 +39,7 @@ namespace Spextensions.RhinoMocks
         {
             if (!_wasSent)
             {
-                throw new AssertionException(_description);
+                throw new SignalAssertionException(_description);
             }
         }
 

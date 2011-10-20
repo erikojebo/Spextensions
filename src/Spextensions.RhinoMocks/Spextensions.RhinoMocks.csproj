@@ -42,6 +42,7 @@
     <Compile Include="Assertions\AssertionExtensions.cs" />
     <Compile Include="Exceptions\AssertionException.cs" />
     <Compile Include="Exceptions\OutOfReturnValuesException.cs" />
+    <Compile Include="Exceptions\SignalAssertionException.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="ReturnValueProcessing\IValueProvider.cs" />
     <Compile Include="ReturnValueProcessing\ReturnSequenceExtensions.cs" />

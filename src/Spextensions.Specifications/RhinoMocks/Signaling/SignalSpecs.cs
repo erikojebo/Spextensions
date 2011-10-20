@@ -1,6 +1,7 @@
 using NUnit.Framework;
 using Spextensions.NUnit;
 using Spextensions.RhinoMocks;
+using Spextensions.RhinoMocks.Exceptions;
 
 namespace Spextensions.Specifications.RhinoMocks.Signaling
 {
@@ -16,7 +17,7 @@ namespace Spextensions.Specifications.RhinoMocks.Signaling
         }
 
         [Fact]
-        [ExpectedException(typeof(AssertionException))]
+        [ExpectedException(typeof(SignalAssertionException))]
         public void Assert_without_prior_signal_throws_ArgumentException()
         {
             _signal.Assert();
@@ -38,7 +39,7 @@ namespace Spextensions.Specifications.RhinoMocks.Signaling
         }
 
         [Fact]
-        [ExpectedException(typeof(AssertionException), ExpectedMessage = "Signal description", MatchType = MessageMatch.Contains)]
+        [ExpectedException(typeof(SignalAssertionException), ExpectedMessage = "Signal description", MatchType = MessageMatch.Contains)]
         public void AssertException_message_includes_signal_description()
         {
             var signal = new Signal("Signal description");

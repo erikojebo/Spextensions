@@ -2,7 +2,9 @@ using NUnit.Framework;
 using Rhino.Mocks;
 using Spextensions.NUnit;
 using Spextensions.RhinoMocks;
+using Spextensions.RhinoMocks.Exceptions;
 using Spextensions.Specifications.RhinoMocks.Dummies;
+using AssertionException = Spextensions.RhinoMocks.Exceptions.AssertionException;
 
 namespace Spextensions.Specifications.RhinoMocks.Signaling
 {
@@ -39,7 +41,7 @@ namespace Spextensions.Specifications.RhinoMocks.Signaling
         }
 
         [Fact]
-        [ExpectedException(typeof(AssertionException))]
+        [ExpectedException(typeof(SignalAssertionException))]
         public void Throws_AssertionException_when_no_signal_is_given_before_matched_expectation()
         {
             _mock2.Expect(x => x.OtherMethod())
@@ -49,7 +51,7 @@ namespace Spextensions.Specifications.RhinoMocks.Signaling
         }
 
         [Fact]
-        [ExpectedException(typeof(AssertionException))]
+        [ExpectedException(typeof(SignalAssertionException))]
         public void Throws_AssertionException_when_only_some_other_signal_is_given_before_matched_expectation()
         {
             _mock1.Expect(x => x.Method())
@@ -63,7 +65,7 @@ namespace Spextensions.Specifications.RhinoMocks.Signaling
         }
 
         [Fact]
-        [ExpectedException(typeof(AssertionException))]
+        [ExpectedException(typeof(SignalAssertionException))]
         public void Throws_AssertionException_when_expected_signal_is_setup_but_signaling_call_is_never_executed()
         {
             _mock1.Expect(x => x.Method())
@@ -76,7 +78,7 @@ namespace Spextensions.Specifications.RhinoMocks.Signaling
         }
 
         [Fact]
-        [ExpectedException(typeof(AssertionException))]
+        [ExpectedException(typeof(SignalAssertionException))]
         public void Throws_AssertionException_when_expected_signal_is_setup_but_signaling_call_is_made_with_wrong_argument()
         {
             _mock1.Expect(x => x.MethodWithParameter("expected argument"))
@@ -103,7 +105,7 @@ namespace Spextensions.Specifications.RhinoMocks.Signaling
         }
         
         [Fact]
-        [ExpectedException(typeof(AssertionException))]
+        [ExpectedException(typeof(SignalAssertionException))]
         public void Throws_AssertionException_when_stub_signal_is_set_up_but_signaling_call_is_never_made()
         {
             _stub1.Stub(x => x.Method())
@@ -116,7 +118,7 @@ namespace Spextensions.Specifications.RhinoMocks.Signaling
         }
         
         [Fact]
-        [ExpectedException(typeof(AssertionException))]
+        [ExpectedException(typeof(SignalAssertionException))]
         public void Throws_AssertionException_when_stub_signal_is_set_up_but_signaling_call_is_made_after_matching_call()
         {
             _stub1.Stub(x => x.Method())
@@ -130,7 +132,7 @@ namespace Spextensions.Specifications.RhinoMocks.Signaling
         }
         
         [Fact]
-        [ExpectedException(typeof(AssertionException))]
+        [ExpectedException(typeof(SignalAssertionException))]
         public void Throws_AssertionException_when_stub_signal_is_set_up_but_signaling_call_is_made_with_wrong_argument()
         {
             _stub1.Stub(x => x.MethodWithParameter("expected argument"))
@@ -144,7 +146,7 @@ namespace Spextensions.Specifications.RhinoMocks.Signaling
         }
         
         [Fact]
-        [ExpectedException(typeof(AssertionException))]
+        [ExpectedException(typeof(SignalAssertionException))]
         public void Throws_AssertionException_when_two_signals_are_expected_but_only_one_is_signaled()
         {
             _stub1.Stub(x => x.Method())
@@ -192,8 +194,8 @@ namespace Spextensions.Specifications.RhinoMocks.Signaling
         }
 
         [Fact]
-        [ExpectedException(typeof(AssertionException))]
-        public void Throws_ArgumentException_when_signal_is_set_for_property_setter_but_is_called_with_wrong_argument()
+        [ExpectedException(typeof(SignalAssertionException))]
+        public void Throws_AssertionException_when_signal_is_set_for_property_setter_but_is_called_with_wrong_argument()
         {
             _mock1.Expect(x => x.Property)
                 .SetPropertyWithArgument("expected value")
