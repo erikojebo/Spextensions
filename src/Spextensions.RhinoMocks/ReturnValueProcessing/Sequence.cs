@@ -3,7 +3,7 @@ using Spextensions.RhinoMocks.Exceptions;
 
 namespace Spextensions.RhinoMocks
 {
-    public class Sequence<T>
+    public class Sequence<T> : IValueProvider<T>
     {
         private Queue<T> _queue;
 

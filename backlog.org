@@ -44,5 +44,7 @@
 *** ExtractParameterByIndex(2, x => _member = x);
 *** ExtractParameterByName("name", x => _member = x);
 
+** Debug output for calls on expected method but with wrong parameters
 
-** Signal that takes a flag object representing a single flag, to avoid having to specify a magic string
+** DONE Better error message for signals (not signalstate)
+** DONE Signal that takes a flag object representing a single flag, to avoid having to specify a magic string

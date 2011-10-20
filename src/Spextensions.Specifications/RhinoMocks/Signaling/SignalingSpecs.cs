@@ -4,7 +4,6 @@ using Spextensions.NUnit;
 using Spextensions.RhinoMocks;
 using Spextensions.RhinoMocks.Exceptions;
 using Spextensions.Specifications.RhinoMocks.Dummies;
-using AssertionException = Spextensions.RhinoMocks.Exceptions.AssertionException;
 
 namespace Spextensions.Specifications.RhinoMocks.Signaling
 {
@@ -103,7 +102,7 @@ namespace Spextensions.Specifications.RhinoMocks.Signaling
             _stub1.Method();
             _mock2.OtherMethod();
         }
-        
+
         [Fact]
         [ExpectedException(typeof(SignalAssertionException))]
         public void Throws_AssertionException_when_stub_signal_is_set_up_but_signaling_call_is_never_made()
@@ -116,7 +115,7 @@ namespace Spextensions.Specifications.RhinoMocks.Signaling
 
             _mock2.OtherMethod();
         }
-        
+
         [Fact]
         [ExpectedException(typeof(SignalAssertionException))]
         public void Throws_AssertionException_when_stub_signal_is_set_up_but_signaling_call_is_made_after_matching_call()
@@ -130,7 +129,7 @@ namespace Spextensions.Specifications.RhinoMocks.Signaling
             _mock2.OtherMethod();
             _stub1.Method();
         }
-        
+
         [Fact]
         [ExpectedException(typeof(SignalAssertionException))]
         public void Throws_AssertionException_when_stub_signal_is_set_up_but_signaling_call_is_made_with_wrong_argument()
@@ -144,7 +143,7 @@ namespace Spextensions.Specifications.RhinoMocks.Signaling
             _stub1.MethodWithParameter("wrong argument");
             _mock2.OtherMethod();
         }
-        
+
         [Fact]
         [ExpectedException(typeof(SignalAssertionException))]
         public void Throws_AssertionException_when_two_signals_are_expected_but_only_one_is_signaled()
@@ -161,7 +160,7 @@ namespace Spextensions.Specifications.RhinoMocks.Signaling
             _mock1.Method();
             _mock2.OtherMethod();
         }
-        
+
         [Fact]
         public void No_exception_when_two_signals_are_expected_and_both_are_signaled_before_matching_call()
         {
