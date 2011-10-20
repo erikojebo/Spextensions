@@ -1,8 +1,9 @@
 using NUnit.Framework;
 using Spextensions.NUnit;
+using Spextensions.RhinoMocks;
 using Spextensions.RhinoMocks.Exceptions;
 
-namespace Spextensions.RhinoMocks
+namespace Spextensions.Specifications.RhinoMocks.ReturnValueProcessing
 {
     [TestFixture]
     public class SequenceSpecs_Empty

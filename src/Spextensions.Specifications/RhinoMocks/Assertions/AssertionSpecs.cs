@@ -1,13 +1,10 @@
-using System;
-using System.Collections.Generic;
-using System.Linq;
 using NUnit.Framework;
 using Rhino.Mocks;
 using Spextensions.NUnit;
-using Spextensions.RhinoMocks.Dummies;
-using Is = Rhino.Mocks.Constraints.Is;
+using Spextensions.RhinoMocks;
+using Spextensions.Specifications.RhinoMocks.Dummies;
 
-namespace Spextensions.RhinoMocks
+namespace Spextensions.Specifications.RhinoMocks.Assertions
 {
     [TestFixture]
     public class AssertionSpecs

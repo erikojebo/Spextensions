@@ -1,4 +1,4 @@
-﻿namespace Spextensions.RhinoMocks.Dummies
+﻿namespace Spextensions.Specifications.RhinoMocks.Dummies
 {
     public interface ISomeOtherInterface
     {

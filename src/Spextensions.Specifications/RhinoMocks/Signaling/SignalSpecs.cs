@@ -1,7 +1,8 @@
 using NUnit.Framework;
 using Spextensions.NUnit;
+using Spextensions.RhinoMocks;
 
-namespace Spextensions.RhinoMocks
+namespace Spextensions.Specifications.RhinoMocks.Signaling
 {
     [TestFixture]
     public class SignalSpecs

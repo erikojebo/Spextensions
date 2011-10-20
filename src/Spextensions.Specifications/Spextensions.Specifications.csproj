@@ -5,11 +5,11 @@
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
     <ProductVersion>8.0.30703</ProductVersion>
     <SchemaVersion>2.0</SchemaVersion>
-    <ProjectGuid>{DF2E8DC9-ED67-40D9-ABEC-4F4AFD9A7AEC}</ProjectGuid>
+    <ProjectGuid>{5E6D500C-68E8-42FA-B8A3-F895787531F7}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>Spextensions</RootNamespace>
-    <AssemblyName>Spextensions</AssemblyName>
+    <RootNamespace>Spextensions.Specifications</RootNamespace>
+    <AssemblyName>Spextensions.Specifications</AssemblyName>
     <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
   </PropertyGroup>
@@ -32,10 +32,10 @@
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="nunit.framework">
-      <HintPath>..\lib\nunit.framework.dll</HintPath>
+      <HintPath>..\..\lib\nunit.framework.dll</HintPath>
     </Reference>
     <Reference Include="Rhino.Mocks">
-      <HintPath>..\lib\Rhino.Mocks.dll</HintPath>
+      <HintPath>..\..\lib\Rhino.Mocks.dll</HintPath>
     </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
@@ -46,35 +46,26 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Dynamics\Builders\DynamicBuilder.cs" />
-    <Compile Include="Dynamics\Builders\DynamicBuilderSpecs.cs" />
-    <Compile Include="Dynamics\Builders\Exceptions\MissingCollectionPropertyException.cs" />
-    <Compile Include="Dynamics\Builders\Exceptions\MissingPropertyException.cs" />
-    <Compile Include="Dynamics\Builders\PropertyValueCollector.cs" />
-    <Compile Include="Dynamics\Builders\PropertyValueCollectorSpecs.cs" />
-    <Compile Include="Dynamics\Infrastructure\FailedInvocationResult.cs" />
-    <Compile Include="Dynamics\Infrastructure\HookableDynamicObject.cs" />
-    <Compile Include="Dynamics\Infrastructure\InvocationResult.cs" />
-    <Compile Include="Dynamics\Infrastructure\SuccessfulInvocationResult.cs" />
-    <Compile Include="NUnit\FactAttribute.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="RhinoMocks\Assertions\AssertionExtensions.cs" />
     <Compile Include="RhinoMocks\Assertions\AssertionSpecs.cs" />
     <Compile Include="RhinoMocks\Dummies\ISomeInterface.cs" />
     <Compile Include="RhinoMocks\Dummies\ISomeOtherInterface.cs" />
-    <Compile Include="RhinoMocks\Exceptions\OutOfReturnValuesException.cs" />
-    <Compile Include="RhinoMocks\ReturnValueProcessing\IValueProvider.cs" />
-    <Compile Include="RhinoMocks\ReturnValueProcessing\ReturnSequenceExtensions.cs" />
     <Compile Include="RhinoMocks\ReturnValueProcessing\ReturnSequenceSpecs.cs" />
-    <Compile Include="RhinoMocks\ReturnValueProcessing\Sequence.cs" />
     <Compile Include="RhinoMocks\ReturnValueProcessing\SequenceSpecs_Empty.cs" />
     <Compile Include="RhinoMocks\ReturnValueProcessing\SequenceSpecs_OneValue.cs" />
-    <Compile Include="RhinoMocks\Signaling\Signal.cs" />
-    <Compile Include="RhinoMocks\Signaling\SignalingExtensions.cs" />
     <Compile Include="RhinoMocks\Signaling\SignalingSpecs.cs" />
     <Compile Include="RhinoMocks\Signaling\SignalSpecs.cs" />
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <ProjectReference Include="..\Spextensions.RhinoMocks\Spextensions.RhinoMocks.csproj">
+      <Project>{738BD3D8-6673-4B85-887C-F6616A306088}</Project>
+      <Name>Spextensions.RhinoMocks</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Spextensions\Spextensions.csproj">
+      <Project>{DF2E8DC9-ED67-40D9-ABEC-4F4AFD9A7AEC}</Project>
+      <Name>Spextensions</Name>
+    </ProjectReference>
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.

@@ -1,6 +1,6 @@
 using System;
-using NUnit.Framework;
 using Rhino.Mocks.Interfaces;
+using Spextensions.RhinoMocks.Exceptions;
 
 namespace Spextensions.RhinoMocks
 {

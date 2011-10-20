@@ -14,12 +14,35 @@
     Property i testbasklass som heter With o returnerar ett dynamiskt objekt som bara samlar på sig
     key value av property namn och värde.
     Buildern kan sedan loopa igenom dictionaryn o sätta lämpliga värden.
-** TODO Support for specifying builders for child types
+** TODO Build child if argument is DynamicBuilder<ChildType>
+
 * Dynamic fluent assertion
 ** Instance thru constructor
 ** Assert property values by daisy chaining
+
 * Dictionary assertion
 ** Dictionary<string, T>
+
 * Dynamic mock / stub
   var foo = DynamicMock.For<IFoo>();
   foo.SomeMethod(1, 2, 3).Returns(9)
+
+* RhinoMocks
+** Overridable stub
+   Perhaps an extension with WhenCalled that returns the value of a lambda, that uses some
+   member which contains a reference to a return value
+
+   ReturnValueProvider<double> returnValueProvider = ReturnValueProvider.Create(someValue);
+
+   foo.Stub(x => x.Bar())
+      .LazyReturnValue(returnValueProvider);
+
+   returnValueProvider.Value = someOtherValue;
+
+** Extract arguments
+*** ExtractFirstParameterOfType<T>(x => _member = x);
+*** ExtractParameterByIndex(2, x => _member = x);
+*** ExtractParameterByName("name", x => _member = x);
+
+
+** Signal that takes a flag object representing a single flag, to avoid having to specify a magic string

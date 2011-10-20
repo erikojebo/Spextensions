@@ -1,9 +1,10 @@
 using NUnit.Framework;
 using Rhino.Mocks;
 using Spextensions.NUnit;
-using Spextensions.RhinoMocks.Dummies;
+using Spextensions.RhinoMocks;
+using Spextensions.Specifications.RhinoMocks.Dummies;
 
-namespace Spextensions.RhinoMocks
+namespace Spextensions.Specifications.RhinoMocks.ReturnValueProcessing
 {
     [TestFixture]
     public class ReturnSequenceSpecs
