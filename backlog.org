@@ -28,7 +28,7 @@
   foo.SomeMethod(1, 2, 3).Returns(9)
 
 * RhinoMocks
-** Overridable stub
+** DONE Overridable stub
    Perhaps an extension with WhenCalled that returns the value of a lambda, that uses some
    member which contains a reference to a return value
 
@@ -40,11 +40,8 @@
    returnValueProvider.Value = someOtherValue;
 
 ** Extract arguments
-*** ExtractFirstParameterOfType<T>(x => _member = x);
-*** ExtractParameterByIndex(2, x => _member = x);
-*** ExtractParameterByName("name", x => _member = x);
+*** DONE ExtractFirstParameterOfType<T>(x => _member = x);
 
-** Debug output for calls on expected method but with wrong parameters
-
+** DONE Debug output for calls on expected method but with wrong parameters
 ** DONE Better error message for signals (not signalstate)
 ** DONE Signal that takes a flag object representing a single flag, to avoid having to specify a magic string

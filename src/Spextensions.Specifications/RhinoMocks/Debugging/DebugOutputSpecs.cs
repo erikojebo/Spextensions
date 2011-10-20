@@ -119,20 +119,5 @@ namespace Spextensions.Specifications.RhinoMocks.Debugging
 
             Assert.That(_invocationInfoRenderer.ToString(), Is.StringContaining("FunctionWithThreeParameters"));
         }
-
-        [Test]
-        public void test()
-        {
-            _mock1.Stub(x => x.FunctionWithThreeParameters(1, true, "string"))
-                .IgnoreArgumentsAndWriteInvocationInfoToConsole()
-                .Return(1);
-
-            _mock1.FunctionWithThreeParameters(0, false, "string");
-            _mock1.FunctionWithThreeParameters(1, true, "other string");
-
-            var renderedString = _invocationInfoRenderer.ToString();
-
-            Assert.That(renderedString, Is.StringMatching(".*0, False, string.*\n.*1, True, other string"));
-        }
     }
 }

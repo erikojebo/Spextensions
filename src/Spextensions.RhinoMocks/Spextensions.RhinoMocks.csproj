@@ -39,23 +39,30 @@
     <Reference Include="Microsoft.CSharp" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Arguments\ArgumentCaptureExtensions.cs" />
+    <Compile Include="Arguments\ArgumentConstraint.cs" />
     <Compile Include="Assertions\AssertionExtensions.cs" />
     <Compile Include="Debugging\ConsoleInvocationInfoRenderer.cs" />
     <Compile Include="Debugging\DebugOutputExtensions.cs" />
     <Compile Include="Debugging\IInvocationInfoRenderer.cs" />
     <Compile Include="Debugging\InMemoryInvocationInfoRenderer.cs" />
     <Compile Include="Debugging\InvocationInfoRenderer.cs" />
+    <Compile Include="Exceptions\ArgumentNotFoundException.cs" />
     <Compile Include="Exceptions\AssertionException.cs" />
     <Compile Include="Exceptions\OutOfReturnValuesException.cs" />
     <Compile Include="Exceptions\SignalAssertionException.cs" />
+    <Compile Include="Exceptions\SpextensionException.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="ReturnValueProcessing\IValueProvider.cs" />
+    <Compile Include="ReturnValueProcessing\LazyReturnValue.cs" />
+    <Compile Include="ReturnValueProcessing\LazyReturnValueExtensions.cs" />
     <Compile Include="ReturnValueProcessing\ReturnSequenceExtensions.cs" />
     <Compile Include="ReturnValueProcessing\Sequence.cs" />
     <Compile Include="Signaling\Signal.cs" />
     <Compile Include="Signaling\SignalingExtensions.cs" />
     <Compile Include="Signaling\SignalState.cs" />
   </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.

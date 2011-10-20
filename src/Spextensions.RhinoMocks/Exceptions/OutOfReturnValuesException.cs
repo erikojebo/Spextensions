@@ -2,5 +2,5 @@
 
 namespace Spextensions.RhinoMocks.Exceptions
 {
-    public class OutOfReturnValuesException : Exception {}
+    public class OutOfReturnValuesException : SpextensionException { }
 }

@@ -47,10 +47,13 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="RhinoMocks\Arguments\ArgumentConstraintSpecs.cs" />
+    <Compile Include="RhinoMocks\Arguments\ArgumentExtractionSpecs.cs" />
     <Compile Include="RhinoMocks\Assertions\AssertionSpecs.cs" />
     <Compile Include="RhinoMocks\Debugging\DebugOutputSpecs.cs" />
     <Compile Include="RhinoMocks\Dummies\ISomeInterface.cs" />
     <Compile Include="RhinoMocks\Dummies\ISomeOtherInterface.cs" />
+    <Compile Include="RhinoMocks\ReturnValueProcessing\LazyReturnValueSpecs.cs" />
     <Compile Include="RhinoMocks\ReturnValueProcessing\ReturnSequenceSpecs.cs" />
     <Compile Include="RhinoMocks\ReturnValueProcessing\SequenceSpecs_Empty.cs" />
     <Compile Include="RhinoMocks\ReturnValueProcessing\SequenceSpecs_OneValue.cs" />
