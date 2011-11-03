@@ -7,7 +7,7 @@ The code is licensed under the MIT license, as described in the LICENSE file.
 Spextensions.RhinoMocks
 ----------------------
 
-Spextensions.RhinoMocks includes several extensions to the RhinoMocks API to simplify common usage patterns of RhinoMocks.
+Spextensions.RhinoMocks includes several extensions to the RhinoMocks API to simplify common usage patterns of RhinoMocks. Spextensions.RhinoMocks has no ties to NUnit. You can use it with what ever testing framework you are currently using.
 
 ### Installation
 
