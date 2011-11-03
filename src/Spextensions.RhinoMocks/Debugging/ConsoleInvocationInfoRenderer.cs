@@ -1,6 +1,7 @@
 ﻿using System;
+using Rhino.Mocks;
 
-namespace Spextensions.RhinoMocks.Debugging
+namespace Rhino.Mocks
 {
     public class ConsoleInvocationInfoRenderer : InvocationInfoRenderer
     {

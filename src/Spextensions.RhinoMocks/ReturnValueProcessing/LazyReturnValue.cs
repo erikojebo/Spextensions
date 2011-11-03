@@ -1,4 +1,4 @@
-﻿namespace Spextensions.RhinoMocks
+﻿namespace Rhino.Mocks
 {
     public class LazyReturnValue<T>
     {

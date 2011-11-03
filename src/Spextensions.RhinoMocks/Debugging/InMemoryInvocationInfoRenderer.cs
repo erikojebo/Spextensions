@@ -1,4 +1,4 @@
-﻿namespace Spextensions.RhinoMocks.Debugging
+﻿namespace Rhino.Mocks
 {
     public class InMemoryInvocationInfoRenderer : InvocationInfoRenderer {}
 }

@@ -1,8 +1,8 @@
 using System;
 using Rhino.Mocks.Interfaces;
-using Spextensions.RhinoMocks.Exceptions;
+using Rhino.Mocks;
 
-namespace Spextensions.RhinoMocks
+namespace Rhino.Mocks
 {
     public static class AssertionExtensions
     {

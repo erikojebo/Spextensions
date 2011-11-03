@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 
-namespace Spextensions.RhinoMocks.Debugging
+namespace Rhino.Mocks
 {
     public abstract class InvocationInfoRenderer : IInvocationInfoRenderer
     {

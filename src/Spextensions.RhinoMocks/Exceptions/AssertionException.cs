@@ -1,6 +1,6 @@
 using System;
 
-namespace Spextensions.RhinoMocks.Exceptions
+namespace Rhino.Mocks
 {
     public class AssertionException : SpextensionException
     {

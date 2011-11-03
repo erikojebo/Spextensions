@@ -1,6 +1,5 @@
 using NUnit.Framework;
 using Rhino.Mocks;
-using Spextensions.RhinoMocks;
 using Spextensions.Specifications.RhinoMocks.Dummies;
 
 namespace Spextensions.Specifications.RhinoMocks.ReturnValueProcessing

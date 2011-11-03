@@ -2,7 +2,6 @@ using System.Linq;
 using NUnit.Framework;
 using Rhino.Mocks;
 using Spextensions.Specifications.RhinoMocks.Dummies;
-using Spextensions.RhinoMocks.Debugging;
 
 namespace Spextensions.Specifications.RhinoMocks.Debugging
 {

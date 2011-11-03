@@ -1,4 +1,4 @@
-namespace Spextensions.RhinoMocks.Exceptions
+namespace Rhino.Mocks
 {
     public class ArgumentNotFoundException : SpextensionException
     {

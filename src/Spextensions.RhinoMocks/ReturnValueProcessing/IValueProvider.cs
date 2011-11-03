@@ -1,6 +1,4 @@
-﻿using System;
-
-namespace Spextensions.RhinoMocks
+﻿namespace Rhino.Mocks
 {
     public interface IValueProvider<out T>
     {

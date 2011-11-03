@@ -1,9 +1,8 @@
 using System;
 using System.Linq;
 using Rhino.Mocks.Interfaces;
-using Spextensions.RhinoMocks.Exceptions;
 
-namespace Spextensions.RhinoMocks.Arguments
+namespace Rhino.Mocks
 {
     public static class ArgumentCaptureExtensions
     {

@@ -1,11 +1,10 @@
 ﻿using System.Collections.Generic;
-using Spextensions.RhinoMocks.Exceptions;
 
-namespace Spextensions.RhinoMocks
+namespace Rhino.Mocks
 {
     public class Sequence<T> : IValueProvider<T>
     {
-        private Queue<T> _queue;
+        private readonly Queue<T> _queue;
 
         public Sequence(params T[] values)
         {

@@ -1,6 +1,4 @@
-﻿using Spextensions.RhinoMocks.Exceptions;
-
-namespace Spextensions.RhinoMocks
+﻿namespace Rhino.Mocks
 {
     public class Signal
     {

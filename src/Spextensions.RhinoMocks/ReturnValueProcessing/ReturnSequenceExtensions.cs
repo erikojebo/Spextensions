@@ -1,6 +1,6 @@
 using Rhino.Mocks.Interfaces;
 
-namespace Spextensions.RhinoMocks
+namespace Rhino.Mocks
 {
     public static class ReturnSequenceExtensions
     {

@@ -1,7 +1,6 @@
 using NUnit.Framework;
 using Spextensions.NUnit;
-using Spextensions.RhinoMocks;
-using Spextensions.RhinoMocks.Exceptions;
+using Rhino.Mocks;
 
 namespace Spextensions.Specifications.RhinoMocks.Signaling
 {

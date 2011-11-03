@@ -1,9 +1,9 @@
 using NUnit.Framework;
 using Spextensions.NUnit;
-using Spextensions.RhinoMocks.Exceptions;
+using Rhino.Mocks;
 using AssertionException = NUnit.Framework.AssertionException;
 
-namespace Spextensions.RhinoMocks
+namespace Rhino.Mocks
 {
     [TestFixture]
     public class SignalStateSpecs

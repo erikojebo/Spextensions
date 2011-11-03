@@ -1,6 +1,6 @@
 using Rhino.Mocks.Interfaces;
 
-namespace Spextensions.RhinoMocks.Debugging
+namespace Rhino.Mocks
 {
     public static class DebugOutputExtensions
     {

@@ -1,8 +1,5 @@
 using NUnit.Framework;
 using Rhino.Mocks;
-using Spextensions.RhinoMocks.Arguments;
-using Spextensions.RhinoMocks.Exceptions;
-using Spextensions.Specifications.RhinoMocks.Dummies;
 
 namespace Spextensions.Specifications.RhinoMocks.Arguments
 {

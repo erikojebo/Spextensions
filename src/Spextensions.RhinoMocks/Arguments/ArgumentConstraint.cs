@@ -1,7 +1,7 @@
 ﻿using System.Linq;
-using Spextensions.RhinoMocks.Exceptions;
+using Rhino.Mocks;
 
-namespace Spextensions.RhinoMocks.Arguments
+namespace Rhino.Mocks
 {
     public class ArgumentConstraint<T>
     {
