@@ -1,11 +1,6 @@
-﻿namespace NUnit.Framework
+﻿using System.Collections.Generic;
+
+namespace NUnit.Framework
 {
     public class SpecificationAttribute : TestFixtureAttribute {}
-
-    [Specification]
-    public class ListSpecs
-    {
-        [Fact]
-
-    }
 }
