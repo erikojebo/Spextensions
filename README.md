@@ -9,6 +9,14 @@ Spextensions.RhinoMocks
 
 Spextensions.RhinoMocks includes several extensions to the RhinoMocks API to simplify common usage patterns of RhinoMocks.
 
+### Installation
+
+The easiest way to add Spextensions.RhinoMocks to your application is to use NuGet. You can add the package by searching for "Spextensions.RhinoMocks" in the NuGet GUI or by using the package manager console:
+
+    PM> Install-Package Spextensions.RhinoMocks
+
+### Features
+
 **Return sequences**
 
 You can set up a mocked/stubbed method to return new values from a given sequence for each time it is called:
