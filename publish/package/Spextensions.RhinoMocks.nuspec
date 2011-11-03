@@ -1,0 +1,18 @@
+<?xml version="1.0"?>
+<package >
+  <metadata>
+    <id>Spextensions.RhinoMocks</id>
+    <version>1.0.0.1</version>
+    <authors>Erik Öjebo</authors>
+    <owners>Erik Öjebo</owners>
+    <projectUrl>https://github.com/erikojebo/Spextensions</projectUrl>
+    <requireLicenseAcceptance>false</requireLicenseAcceptance>
+    <description>Extensions for the mocking framework RhinoMocks</description>
+    <releaseNotes>Initial release</releaseNotes>
+    <copyright>Copyright 2011</copyright>
+    <tags>rhinomocks mocking mock mocks spextensions</tags>
+    <dependencies>
+      <dependency id="RhinoMocks" version="3.6" />
+    </dependencies>
+  </metadata>
+</package>

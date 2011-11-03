@@ -1,0 +1,1 @@
+cp ../src/Spextensions.RhinoMocks/bin/Release/Spextensions.RhinoMocks.dll package/lib/net40/
