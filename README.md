@@ -9,15 +9,15 @@ Spextensions.RhinoMocks
 
 Spextensions.RhinoMocks includes several extensions to the RhinoMocks API to simplify common usage patterns of RhinoMocks.
 
-** Return sequences **
+**Return sequences**
 
-** Assertions **
+**Assertions**
 
-** Method call ordering  **
+**Method call ordering**
 
-** Capturing arguments **
+**Capturing arguments**
 
-** Debugging **
+**Debugging**
 
 
 
