@@ -17,7 +17,7 @@ The easiest way to add Spextensions.RhinoMocks to your application is to use NuG
 
 ### Features
 
-**Return sequences**
+#### Return sequences
 
 You can set up a mocked/stubbed method to return new values from a given sequence for each time it is called:
 
