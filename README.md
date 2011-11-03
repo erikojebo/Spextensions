@@ -31,7 +31,7 @@ Assert.AreEqual(2, _stub.Function());
 Assert.AreEqual(3, _stub.Function());
 ```
 
-**Assertions**
+#### Assertions
 
 You can perform arbitrary boolean assertions when expectations are matched:
 
@@ -42,7 +42,7 @@ _mock.Expect(x => x.Method())
 
 The test will fail if the condition lambda returns false when the mocked/stubbed method is called.
 
-**Lazy/overridable return values**
+#### Lazy/overridable return values
 
 You can set up a mocked/stubbed method to return a given value, which can later be changed so that is actually returns another value. This is very useful when most of the test require a certain return value, but one or two tests need another return value. Now you can set up the mock/stub in the SetUp of the test fixture and then just change the return value in the tests that do not want the default behaviour.
 
@@ -83,7 +83,7 @@ public class LazyReturnValueSpecs
 }
 ```
 
-**Testing order of method calls**
+#### Testing order of method calls
 
 Using StrictMocks is simply a pain. If you want to test that methods are called in the correct order, but without having to deal with StrictMocks you can use Signals.
 
@@ -108,7 +108,7 @@ Multiple signals can be used simultaneously if you want to check the order of mu
 
 Signals are inspired by jMocks States.
 
-**Capturing arguments**
+#### Capturing arguments
 
 You can capture the actual values from a call to a mocked/stubbed method:
 
@@ -140,7 +140,7 @@ Assert.AreEqual("string 2", argumentValue);
 
 You can extract a parameter by type or by type and index.
 
-**Debugging**
+#### Debugging
 
 It can be frustrating when your stubs/mocks do not get called the way you expect them to. If a mocked method is not called with the correct parameters, you can use debuggins extensions to find out with which parameters the method is actually called.
 
