@@ -1,6 +1,7 @@
 using NUnit.Framework;
 
-namespace Spextensions.NUnit
+namespace NUnit.Framework
 {
     public class FactAttribute : TestAttribute { }
 }
+

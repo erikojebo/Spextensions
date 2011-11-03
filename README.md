@@ -27,9 +27,15 @@ Spextensions.NUnit
 Spextensions.NUnit primarily includes fluid, RSpec style, assertion syntax and semantic aliases for attributes:
 
 ```csharp
-[Fact]
-private void Clearing_a_list_removes_all_items()
+[Specification]
+public class ListSpecs
 {
-   // ...
+    [Fact]
+    private void Clearing_a_list_removes_all_items()
+    {
+       var list = new List<int> { 1, 2, 3 };
+       list.Clear();
+       list.Count.ShouldEqual(0);
+    }
 }
 ```
