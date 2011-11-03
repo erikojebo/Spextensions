@@ -1,5 +1,4 @@
 using NUnit.Framework;
-using Spextensions.NUnit;
 using Rhino.Mocks;
 
 namespace Spextensions.Specifications.RhinoMocks.Signaling

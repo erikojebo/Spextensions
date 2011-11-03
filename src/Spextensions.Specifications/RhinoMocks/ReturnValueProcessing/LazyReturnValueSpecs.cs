@@ -7,20 +7,23 @@ namespace Spextensions.Specifications.RhinoMocks.ReturnValueProcessing
     [TestFixture]
     public class LazyReturnValueSpecs
     {
-        private ISomeInterface _mock1;
+        private ISomeInterface _stub;
+        private LazyReturnValue<int> _returnValue;
 
         [SetUp]
         public void SetUp()
         {
-            _mock1 = MockRepository.GenerateMock<ISomeInterface>();
+            _stub = MockRepository.GenerateStub<ISomeInterface>();
+
+            _returnValue = LazyReturnValue.Create(1);
+            _stub.Stub(x => x.Function()).LazyReturnValue(_returnValue);
+
         }
 
         [Test]
         public void Lazily_returning_constant_value_returns_the_constant_value()
         {
-            _mock1.Stub(x => x.Function()).LazyReturnValue(LazyReturnValue.Create(1));
-
-            var actualReturnValue = _mock1.Function();
+            var actualReturnValue = _stub.Function();
 
             Assert.AreEqual(1, actualReturnValue);
         }
@@ -28,13 +31,9 @@ namespace Spextensions.Specifications.RhinoMocks.ReturnValueProcessing
         [Test]
         public void Changing_lazily_returned_value_returns_the_new_value()
         {
-            var lazyReturnValue = LazyReturnValue.Create(1);
+            _returnValue.Value = 2;
 
-            _mock1.Stub(x => x.Function()).LazyReturnValue(lazyReturnValue);
-
-            lazyReturnValue.Value = 2;
-
-            var actualReturnValue = _mock1.Function();
+            var actualReturnValue = _stub.Function();
 
             Assert.AreEqual(2, actualReturnValue);
         }

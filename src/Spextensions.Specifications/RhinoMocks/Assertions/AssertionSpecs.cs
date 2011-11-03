@@ -1,6 +1,5 @@
 using NUnit.Framework;
 using Rhino.Mocks;
-using Spextensions.NUnit;
 using Spextensions.Specifications.RhinoMocks.Dummies;
 using AssertionException = Rhino.Mocks.AssertionException;
 

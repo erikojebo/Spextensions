@@ -1,6 +1,5 @@
 using NUnit.Framework;
 using Rhino.Mocks;
-using Spextensions.NUnit;
 using Spextensions.Specifications.RhinoMocks.Dummies;
 
 namespace Spextensions.Specifications.RhinoMocks.ReturnValueProcessing
@@ -63,9 +62,9 @@ namespace Spextensions.Specifications.RhinoMocks.ReturnValueProcessing
         [Fact]
         public void Returns_specified_return_values_in_expected_order()
         {
-            var valueProvider = new Sequence<int>(1, 2, 3);
+            var sequence = new Sequence<int>(1, 2, 3);
 
-            _stub.Stub(x => x.Function()).ReturnSequence(valueProvider);
+            _stub.Stub(x => x.Function()).ReturnSequence(sequence);
 
             Assert.AreEqual(1, _stub.Function());
             Assert.AreEqual(2, _stub.Function());

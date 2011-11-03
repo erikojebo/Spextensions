@@ -1,7 +1,4 @@
 using NUnit.Framework;
-using Spextensions.NUnit;
-using Rhino.Mocks;
-using AssertionException = NUnit.Framework.AssertionException;
 
 namespace Rhino.Mocks
 {
