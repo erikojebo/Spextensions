@@ -5,7 +5,7 @@
     <version>1.0.2</version>
     <authors>Erik Öjebo</authors>
     <owners>Erik Öjebo</owners>
-    <projectUrl>https://github.com/erikojebo/Spextensions</projectUrl>
+    <projectUrl>https://github.com/erikojebo/Spextensions/wiki</projectUrl>
     <requireLicenseAcceptance>false</requireLicenseAcceptance>
     <description>Extensions for the mocking framework RhinoMocks</description>
     <releaseNotes>Initial release</releaseNotes>

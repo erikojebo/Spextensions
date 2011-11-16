@@ -39,9 +39,10 @@
 
    returnValueProvider.Value = someOtherValue;
 
-** Extract arguments
+** DONE Extract arguments
 *** DONE ExtractFirstParameterOfType<T>(x => _member = x);
 
 ** DONE Debug output for calls on expected method but with wrong parameters
 ** DONE Better error message for signals (not signalstate)
 ** DONE Signal that takes a flag object representing a single flag, to avoid having to specify a magic string
+** TODO IEnumerable-constraints (andra intressanta constraints?)
